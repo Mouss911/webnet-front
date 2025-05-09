@@ -1,0 +1,22 @@
+# Gérer automatiquement les fins de ligne pour les fichiers texte
+* text=auto
+
+# Forcer LF (Linux/macOS) pour les fichiers spécifiques
+*.js        text eol=lf
+*.jsx       text eol=lf
+*.html      text eol=lf
+*.css       text eol=lf
+*.md        text eol=lf
+*.json      text eol=lf
+*.config.js text eol=lf
+
+# Les fichiers binaires ne doivent pas être modifiés
+*.png       binary
+*.jpg       binary
+*.zip       binary
+
+# Fichiers générés par le système (ex: package-lock.json)
+package-lock.json text eol=lf
+
+# Fichiers Windows (ex: .bat) conservent CRLF
+*.bat       text eol=crlf
