@@ -1,4 +1,7 @@
 import { useState } from "react"
+import Logo from "../assets/logo1.png"
+import Cart from "./Cart"
+import Tof from "../assets/prod.png"
 
 // Icônes SVG inline pour une solution pure React
 const HeartIcon = () => (
@@ -70,7 +73,15 @@ const SearchIcon = () => (
 )
 
 function Navbar() {
-  const [isAlertVisible, setIsAlertVisible] = useState(true)
+  // const [isInfoVisible, setIsInfoVisible] = useState(true)
+  const [isAlertVisible, setIsAlertVisible] = useState(true);
+  const [isCartVisible, setIsCartVisible] = useState(false);
+
+  // Données temporaires du panier
+  const cartItems = [
+    { brand: "Coach", image: Tof, name: "Leather Coach Bag", price: 54.69, quantity: 1 },
+    { brand: "Coach", image: Tof, name: "Leather Coach Bag", price: 54.69, quantity: 1 }
+  ];
 
   return (
     <div className="w-full">
@@ -78,56 +89,30 @@ function Navbar() {
         {/* Logo */}
         <a href="/" className="flex items-center">
           <div className="text-[#1B4B66] font-bold text-xl flex items-center">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="mr-1"
-            >
-              <path
-                d="M12 2L2 7L12 12L22 7L12 2Z"
-                fill="#0052CC"
-                stroke="#0052CC"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M2 17L12 22L22 17"
-                stroke="#0052CC"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M2 12L12 17L22 12"
-                stroke="#0052CC"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <img 
+              src={Logo} 
+              alt="Webnet Logo" 
+              className="mr-1 w-6 h-6 hover:brightness-110 transition-all"
+            />
             WEBNET
           </div>
         </a>
 
         {/* Navigation Items */}
         <nav className="hidden md:flex items-center space-x-6">
-          <a href="#" className="text-sm font-medium hover:text-blue-700">
+          <a href="#" className="text-sm font-medium hover:text-[#1B4B66]">
             Item 1
           </a>
-          <a href="#" className="text-sm font-medium hover:text-blue-700">
+          <a href="#" className="text-sm font-medium hover:text-[#1B4B66]">
             Item 2
           </a>
-          <a href="#" className="text-sm font-medium hover:text-blue-700">
+          <a href="#" className="text-sm font-medium hover:text-[#1B4B66]">
             Item 3
           </a>
-          <a href="#" className="text-sm font-medium hover:text-blue-700">
+          <a href="#" className="text-sm font-medium hover:text-[#1B4B66]">
             Item 4
           </a>
-          <a href="#" className="text-sm font-medium hover:text-blue-700">
+          <a href="#" className="text-sm font-medium hover:text-[#1B4B66]">
             Item 5
           </a>
         </nav>
@@ -144,18 +129,34 @@ function Navbar() {
               className="w-full py-2 pl-8 pr-4 text-sm bg-gray-100 border-0 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
-          <button className="p-2 text-gray-700 hover:text-blue-700">
+          <button className="p-2 text-gray-700 hover:text-[#1B4B66] cursor-pointer">
             <HeartIcon />
             <span className="sr-only">Wishlist</span>
           </button>
-          <button className="p-2 text-gray-700 hover:text-blue-700">
+          <button className="p-2 text-gray-700 hover:text-[#1B4B66] cursor-pointer">
             <UserIcon />
             <span className="sr-only">Account</span>
           </button>
-          <button className="p-2 text-gray-700 hover:text-blue-700">
+          <button 
+            className="p-2 text-gray-700 hover:text-[#1B4B66] cursor-pointer"
+            onClick={() => setIsCartVisible(!isCartVisible)}
+          >
             <ShoppingBagIcon />
             <span className="sr-only">Cart</span>
           </button>
+
+          {isCartVisible && (
+            <>
+              <div 
+                className="fixed inset-0 bg-black/50 z-40" 
+                onClick={() => setIsCartVisible(false)}
+              />
+              <Cart 
+                items={cartItems} 
+                onClose={() => setIsCartVisible(false)}
+              />
+            </>
+          )}
         </div>
       </div>
 
