@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 import { FaChevronLeft, FaChevronRight, FaCartPlus } from "react-icons/fa";
 import Foto from '../assets/product-image.png';
 import Thumb from '../assets/prod.png';
@@ -15,7 +16,13 @@ const DetailPage = () => {
   return (
     <div className="p-6 max-w-6xl mx-auto font-sans">
       {/* Breadcrumb */}
-      <div className="text-sm text-gray-500 mb-4">Home &gt; Mugs &gt; Customise</div>
+      <div className="text-sm mb-4">
+        <Link to="/" className="text-blue-600 hover:text-blue-800">Home</Link>
+        <span className="mx-2">›</span>
+        <Link to="/products" className="text-blue-600 hover:text-blue-800">Mugs</Link>
+        <span className="mx-2">›</span>
+        <span className="text-gray-600">Customise</span>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left: Image & thumbnails */}
