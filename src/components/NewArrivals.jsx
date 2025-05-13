@@ -37,7 +37,7 @@ const products = [
 
 const NewArrivals = () => {
   return (
-    <section className="py-10 px-4 md:px-16">
+    <section className="py-10 px-4 md:px-16" id='new-arrivals'>
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-semibold">New Arrivals</h2>
         <a href="#" className="text-sm text-blue-600 hover:underline">

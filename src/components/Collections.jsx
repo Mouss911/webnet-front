@@ -29,7 +29,7 @@ const collections = [
 
 const Collections = () => {
   return (
-    <section className="bg-[#22556B] py-8 px-4 md:px-16">
+    <section className="bg-[#22556B] py-8 px-4 md:px-16" id="collections">
       <h2 className="text-white text-2xl font-semibold mb-6">Featured Collection</h2>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         {collections.map((item) => (

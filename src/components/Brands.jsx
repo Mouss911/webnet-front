@@ -11,7 +11,7 @@ export default function Brands() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-6">
+    <div className="container mx-auto px-4 py-6" id="brands">
       {/* Heading */}
       <h2 className="text-lg font-semibold text-gray-800 mb-4">Shop by Brands</h2>
 

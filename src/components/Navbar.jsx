@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from 'react-router-dom';
 import Logo from "../assets/logo1.png"
 import Cart from "./Cart"
 import Tof from "../assets/prod.png"
@@ -73,7 +74,6 @@ const SearchIcon = () => (
 )
 
 function Navbar() {
-  // const [isInfoVisible, setIsInfoVisible] = useState(true)
   const [isAlertVisible, setIsAlertVisible] = useState(true);
   const [isCartVisible, setIsCartVisible] = useState(false);
 
@@ -84,10 +84,10 @@ function Navbar() {
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full fixed top-0 left-0 z-50 bg-white shadow-sm">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <div className="text-[#1B4B66] font-bold text-xl flex items-center">
             <img 
               src={Logo} 
@@ -96,25 +96,25 @@ function Navbar() {
             />
             WEBNET
           </div>
-        </a>
+        </Link>
 
         {/* Navigation Items */}
         <nav className="hidden md:flex items-center space-x-6">
-          <a href="#" className="text-sm font-medium hover:text-[#1B4B66]">
+          <Link to="/" className="text-sm font-medium hover:text-[#1B4B66]">
             Item 1
-          </a>
-          <a href="#" className="text-sm font-medium hover:text-[#1B4B66]">
+          </Link>
+          <Link to="/item2" className="text-sm font-medium hover:text-[#1B4B66]">
             Item 2
-          </a>
-          <a href="#" className="text-sm font-medium hover:text-[#1B4B66]">
+          </Link>
+          <Link to="/item3" className="text-sm font-medium hover:text-[#1B4B66]">
             Item 3
-          </a>
-          <a href="#" className="text-sm font-medium hover:text-[#1B4B66]">
+          </Link>
+          <Link to="/item4" className="text-sm font-medium hover:text-[#1B4B66]">
             Item 4
-          </a>
-          <a href="#" className="text-sm font-medium hover:text-[#1B4B66]">
+          </Link>
+          <Link to="/item5" className="text-sm font-medium hover:text-[#1B4B66]">
             Item 5
-          </a>
+          </Link>
         </nav>
 
         {/* Search and Icons */}

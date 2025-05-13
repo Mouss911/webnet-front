@@ -3,6 +3,7 @@ import bgImage from '../assets/custom.png';
 export default function Customs() {
     return (
       <div
+        id="customs"
         className="bg-cover bg-center rounded-lg p-6 shadow-md flex items-start h-70"
         style={{ backgroundImage: `url(${bgImage})` }}
       >
