@@ -33,7 +33,7 @@ const SectionCards = () => {
               {section.title}
             </p>
             <div className="mt-4 ml-auto w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-md">
-              <ArrowRight className={`w-4 h-4 ${section.textColor}`} />
+              <ArrowRight className={`w-4 h-4 cursor-pointer ${section.textColor}`} />
             </div>
           </div>
         </div>

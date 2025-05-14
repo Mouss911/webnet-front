@@ -9,6 +9,9 @@ import SectionCards from './components/SectionsCards'
 import Footer from './components/Footer'
 import Category from './components/Category'
 import DetailPage from './components/DetailPage'
+import CheckoutPage from './components/CheckoutPage'
+import MyCart from './components/MyCart'
+import Paiement from './components/Paiement'
 
 function App() {
   return (
@@ -23,11 +26,13 @@ function App() {
             <Brands />
             <Customs />
             <SectionCards />
-            {/* <DetailPage /> */}
           </>
         } />
         <Route path="/products" element={<Category />} />
         <Route path="/detail" element={<DetailPage />} />
+        <Route path="/cart" element={<MyCart />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/paiement" element={<Paiement />} />
       </Routes>
       <Footer />
     </div>

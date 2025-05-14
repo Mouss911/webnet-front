@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Link } from 'react-router-dom';
-import { FaChevronLeft, FaChevronRight, FaCartPlus } from "react-icons/fa";
+import { Link, useNavigate } from 'react-router-dom';
+import { FaChevronLeft, FaChevronRight, FaCartPlus, FaHeart } from "react-icons/fa";
 import Foto from '../assets/product-image.png';
 import Thumb from '../assets/prod.png';
 
 const DetailPage = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("description");
 
   const tabs = [
@@ -121,11 +122,14 @@ const DetailPage = () => {
 
           {/* Buttons */}
           <div className="flex gap-4 mt-6">
-            <button className="flex items-center justify-center cursor-pointer gap-2 px-6 py-3 bg-[#1B4B66] text-white rounded-md hover:bg-[#144A64] transition">
+            <button 
+              className="flex items-center justify-center cursor-pointer gap-2 px-6 py-3 bg-[#1B4B66] text-white rounded-md hover:bg-[#144A64] transition"
+              onClick={() => navigate('/cart')}
+            >
               <FaCartPlus /> Add to Cart
             </button>
-            <button className="px-6 py-3 border border-[#1B4B66] cursor-pointer rounded-md hover:bg-gray-100">
-              Add to Wishlist
+            <button className="flex items-center justify-center gap-2 px-6 py-3 border border-[#1B4B66] cursor-pointer rounded-md hover:bg-gray-100">
+              <FaHeart /> Add to Wishlist
             </button>
           </div>
         </div>
@@ -140,7 +144,7 @@ const DetailPage = () => {
               className={`px-4 py-2 rounded-t-md ${
                 activeTab === tab.key
                   ? "bg-[#1B4B66] text-white"
-                  : "text-gray-600 hover:text-[#1B4B66]"
+                  : "text-gray-600 hover:text-[#1B4B66] cursor-pointer"
               }`}
               onClick={() => setActiveTab(tab.key)}
             >
