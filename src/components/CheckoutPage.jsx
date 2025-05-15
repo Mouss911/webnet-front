@@ -79,7 +79,7 @@ export default function CheckoutPage() {
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">Mobile Number</label>
                       <div className="flex">
-                        <div className="bg-gray-100 border border-gray-200 rounded-l p-2 text-gray-500">+11</div>
+                        <div className="bg-gray-100 border border-gray-200 rounded-l p-2 text-gray-500">+221</div>
                         <input 
                           type="text" 
                           placeholder="Enter Number" 

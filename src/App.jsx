@@ -12,6 +12,8 @@ import DetailPage from './components/DetailPage'
 import CheckoutPage from './components/CheckoutPage'
 import MyCart from './components/MyCart'
 import Paiement from './components/Paiement'
+import About from "./components/About"
+import UserProfile from "./components/UserProfile"
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
         <Route path="/cart" element={<MyCart />} />
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/paiement" element={<Paiement />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/profile" element={<UserProfile />} />
       </Routes>
       <Footer />
     </div>

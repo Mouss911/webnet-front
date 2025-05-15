@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Logo from "../assets/logo1.png"
 import Cart from "./Cart"
 import Tof from "../assets/prod.png"
@@ -76,6 +76,7 @@ const SearchIcon = () => (
 function Navbar() {
   const [isAlertVisible, setIsAlertVisible] = useState(true);
   const [isCartVisible, setIsCartVisible] = useState(false);
+  const navigate = useNavigate();
 
   // Données temporaires du panier
   const cartItems = [
@@ -101,7 +102,7 @@ function Navbar() {
         {/* Navigation Items */}
         <nav className="hidden md:flex items-center space-x-6">
           <Link to="/" className="text-sm font-medium hover:text-[#1B4B66]">
-            Item 1
+            Home
           </Link>
           <Link to="/item2" className="text-sm font-medium hover:text-[#1B4B66]">
             Item 2
@@ -112,8 +113,8 @@ function Navbar() {
           <Link to="/item4" className="text-sm font-medium hover:text-[#1B4B66]">
             Item 4
           </Link>
-          <Link to="/item5" className="text-sm font-medium hover:text-[#1B4B66]">
-            Item 5
+          <Link to="/about" className="text-sm font-medium hover:text-[#1B4B66]">
+            About
           </Link>
         </nav>
 
@@ -133,7 +134,10 @@ function Navbar() {
             <HeartIcon />
             <span className="sr-only">Wishlist</span>
           </button>
-          <button className="p-2 text-gray-700 hover:text-[#1B4B66] cursor-pointer">
+          <button 
+            className="p-2 text-gray-700 hover:text-[#1B4B66] cursor-pointer"
+            onClick={() => navigate('/profile')}
+          >
             <UserIcon />
             <span className="sr-only">Account</span>
           </button>
